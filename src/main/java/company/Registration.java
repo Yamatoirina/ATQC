@@ -27,6 +27,7 @@ public class Registration extends WebBrowserFactory{
 
     @Test
     public void CreateAccountTest(){
+        SignIntoAccountTest();
         createAccountPage
              .setFirstName("Vasja")
                 .setLastName("Ivanov")
