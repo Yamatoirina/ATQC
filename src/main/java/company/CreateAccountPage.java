@@ -31,11 +31,11 @@ public class CreateAccountPage {
 
 
 
-  public CreateAccountPage setFirstName(String name){
-      driver.findElement(firstName).clear();
-      driver.findElement(firstName).sendKeys(name);
-      return this;
-  }
+    public CreateAccountPage setFirstName(String name){
+        driver.findElement(firstName).clear();
+        driver.findElement(firstName).sendKeys(name);
+        return this;
+    }
 
     public CreateAccountPage setLastName(String nameLast){
         driver.findElement(lastName).sendKeys(nameLast);
@@ -98,6 +98,5 @@ public class CreateAccountPage {
     public String getCreateAccountErrorMessage() {
         return driver.findElement(errorMessage).getText();
     }
-
 
 }

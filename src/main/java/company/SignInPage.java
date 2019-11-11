@@ -59,4 +59,7 @@ public class SignInPage {
 //    public boolean isCreateAccountFormDisplayed() {
 //        return driver.findElement(createAccountContent).isDisplayed();
 //    }
+
+
+
 }

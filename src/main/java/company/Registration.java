@@ -1,15 +1,17 @@
 package company;
 
-
 import org.junit.Assert;
 import org.junit.Test;
 
 
+
+
 public class Registration extends WebBrowserFactory{
+
 
     String loginEmail = "aa345345sdfgsd@gmail.com";
     String createAccountContent = "CREATE AN ACCOUNT";
-    String errorMessage= "There is 3 errors";
+    String errorMessage= "There are 2 errors";
 
     @Test
     public void SignIntoAccountTest()  {
@@ -29,7 +31,7 @@ public class Registration extends WebBrowserFactory{
     public void CreateAccountTest(){
         SignIntoAccountTest();
         createAccountPage
-             .setFirstName("Vasja")
+                .setFirstName("Vasja")
                 .setLastName("Ivanov")
                 .enterEmail("glglglgl@test.com")
                 .enterPassword("123456")
@@ -45,5 +47,5 @@ public class Registration extends WebBrowserFactory{
         Assert.assertEquals( errorMessage, createAccountPage.getCreateAccountErrorMessage());
 
 
-}
+    }
 }

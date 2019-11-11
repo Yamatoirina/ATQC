@@ -9,6 +9,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.stqa.selenium.factory.WebDriverPool;
 
+import java.util.concurrent.TimeUnit;
+
 public class WebBrowserFactory {
 
     public static WebDriver driver;
@@ -26,7 +28,8 @@ public class WebBrowserFactory {
         driver = WebDriverPool.DEFAULT.getDriver(new ChromeOptions());
 
         driver.manage().window().maximize();
-        wait= new WebDriverWait(driver, 15);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
 
         signInPage = new SignInPage(driver);
         createAccountPage = new CreateAccountPage(driver);
@@ -34,8 +37,9 @@ public class WebBrowserFactory {
     }
 
 
-    @AfterClass
-    public static void closeBrowser(){
-        WebDriverPool.DEFAULT.dismissAll();
-    }
+
+//    @AfterClass
+//    public static void closeBrowser(){
+//        WebDriverPool.DEFAULT.dismissAll();
+//    }
 }
